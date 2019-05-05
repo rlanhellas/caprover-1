@@ -57,10 +57,19 @@ class DockerRegistryHelper {
 
                 const imageNameWithoutDockerAuth = fullImageName
 
-                fullImageName =
-                    data.registryDomain +
-                    '/' +
-                    fullImageName
+                if (data.registryImagePrefix) {
+                    fullImageName =
+                        data.registryDomain +
+                        '/' +
+                        data.registryImagePrefix +
+                        '/' +
+                        fullImageName
+                } else {
+                    fullImageName =
+                        data.registryDomain +
+                        '/' +
+                        fullImageName
+                }
 
                 Logger.d(`FullImageName is ${fullImageName}`)
 
