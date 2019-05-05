@@ -101,6 +101,9 @@ export default class ImageMaker {
 
         const baseImageNameWithoutVerAndReg =
             'img-' + this.namespace + '-' + appName // img-captain--myapp
+
+        self.buildLogs[appName].log(`Building the image without '--'. Image name: ${baseImageNameWithoutVerAndReg}`)
+
         let fullImageName = '' // repo.domain.com:998/username/reponame:8
 
         return Promise.resolve() //
