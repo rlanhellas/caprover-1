@@ -60,9 +60,9 @@ class DockerRegistryHelper {
                 fullImageName =
                     data.registryDomain +
                     '/' +
-                    data.registryImagePrefix +
-                    '/' +
                     fullImageName
+
+                Logger.d(`FullImageName is ${fullImageName}`)
 
                 return self
                     .getDockerAuthObjectForImageName(fullImageName)
